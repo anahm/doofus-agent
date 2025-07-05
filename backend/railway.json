@@ -3,12 +3,12 @@
   "build": {
     "builder": "DOCKERFILE",
     "dockerfilePath": "backend/Dockerfile",
-    "watchPatterns": {
+    "watchPatterns": [
         "requirements.txt",
         "Dockerfile",
         "src/**",
         "railway.json"
-    }
+    ]
   },
   "deploy": {
     "startCommand": "uvicorn main:app --host 0.0.0.0 --port 8000"

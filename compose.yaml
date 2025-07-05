@@ -1,0 +1,83 @@
+# docker compose -- helps us remember various arguments on the actual docker commands
+#                -- helps manage 1+ container at a time for the local project
+#                -- defined by a flexible yaml-like file of key-value pairs
+
+# Run all configurations: docker compose up --build
+# Run a new instance of a container: docker compose run app /bin/bash
+
+# docker compose expects services, has to be the first key-value pair defined
+services:
+  # key-values for the names we want to call our services
+  static_html: # custom key name, could even be "my_awesome_app"
+    # set argument names for Docker custom apps, cannot be customized
+    # Example argument: "image: python:3.13.4-slim-bullseye"
+
+    # Building a custom Docker container instead
+    build:
+      # where are we building the Dockerfile
+      # often easier to consolidate with the app you're running
+      context: ./static_html
+      # location of file
+      dockerfile: static.Dockerfile
+
+    # map ports available to local machine / container
+    ports:
+      - 8000:8000
+      - 3000:8000
+    command: python -m http.server 8000
+
+    # mount a local directory to a container, kinda like attaching an external drive
+    # static way to make changes with static files. cool!
+    # note that sometimes you need to update the web framework command to update based on file changes
+    volumes:
+      # {local folder relative to compose.yaml file}:{location in docker container of the same folder you copied into}
+      # this volume is not managed by Docker, but sometimes there can be cruft. To clean up: docker compose down -v
+      - ./static_html/src:/app
+
+  # you can then build other services and set out other configurations below, typically 1:1 between service to folder
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8000
+
+    # now running a FastAPI web app
+    # uvicorn := webserver interface for asynchronous programs
+    # --host : bind it to any host by setting all to 0, can be accessed by any host that's running it
+    # --reload : watching for file changes in the volume (or can run action:restart below)
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+
+    # setting environment variables
+    # not a secret, fine if it's exposed to the public. good for runtime variables you need
+    environment:
+      - PORT=8000
+      - MY_PROJECT=super awesome project
+
+    # or can set more serious secrets as a file
+    # enabling injecting secrets at runtime, even better to use GCP SecretsManager
+    env_file:
+      - .env.sample
+
+    # volumes := two-way file sync. If you make a change in your container, reflected in local code too.
+    # Note that this is legacy, doesn't honor .dockerignore
+    volumes:
+      - ./backend/src:/app
+
+    develop:
+      # Must trigger by running: "docker compose up --watch"
+      watch:
+        # rebuild := if anything changes in requirements.txt, want the entire container to rebuild
+        - action: rebuild
+          path: backend/requirements.txt
+        - action: rebuild
+          path: backend/Dockerfile
+        # restart := restart the command above, aka restarts the server (not as smooth as uvicorn --rebuild)
+        - action: restart
+          path: backend/src/
+
+        # sync := add in a target where you want a local folder to one-directionally sync with the container
+        # NOTE - doesn't sync any new folders or files created, only files that already exist. Would need to "rebuild"
+        # - action: sync+restart
+        #   path: backend/src/
+        #   target: /app

@@ -1,8 +1,9 @@
+from typing import List
 from fastapi import APIRouter, Depends
 from sqlmodel import Session, select
 
 from api.db import get_session
-from .models import ChatMessagePayload, ChatMessage
+from .models import ChatMessagePayload, ChatMessage, ChatMessageListItem
 
 # APIRouter similar to an @app.get() command
 router = APIRouter()
@@ -13,7 +14,8 @@ def chat_health():
     return {"status": "ok"}
 
 # /api/chats/recent/
-@router.get("/recent")
+# curl http://localhost:8080/api/chats/recent/
+@router.get("/recent", response_model=List[ChatMessageListItem])
 def chat_list_messages(session: Session = Depends(get_session)):
     # Creating a SQL query via Python using the built-in features of SQLModel
     query = select(ChatMessage)

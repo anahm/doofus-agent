@@ -70,11 +70,14 @@ services:
       - POSTGRES_USER=dbuser
       - POSTGRES_PASSWORD=db-password
       - POSTGRES_DB=mydb
+    # Or could set by an env_file:
+    # env_file:
+    #  - .env.sample-db
     volumes:
       # Want docker compose to create and destroy the volume for me (see below)
       # No "./" file reference before to remember that it's a specific Docker managed volume below
       # This is dangerous in production to accidentally delete all of your production data, better to use managed service
-      - dc_managed_db_volume:/var/lib/postgresl/data
+      - dc_managed_db_volume:/var/lib/postgresql/data
 
   # static_html: # custom key name, could even be "my_awesome_app"
   #   # set argument names for Docker custom apps, cannot be customized

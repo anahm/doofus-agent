@@ -8,32 +8,6 @@
 # docker compose expects services, has to be the first key-value pair defined
 services:
   # key-values for the names we want to call our services
-  static_html: # custom key name, could even be "my_awesome_app"
-    # set argument names for Docker custom apps, cannot be customized
-    # Example argument: "image: python:3.13.4-slim-bullseye"
-
-    # Building a custom Docker container instead
-    build:
-      # where are we building the Dockerfile
-      # often easier to consolidate with the app you're running
-      context: ./static_html
-      # location of file
-      dockerfile: static.Dockerfile
-
-    # map ports available to local machine / container
-    ports:
-      - 8000:8000
-      - 3000:8000
-    command: python -m http.server 8000
-
-    # mount a local directory to a container, kinda like attaching an external drive
-    # static way to make changes with static files. cool!
-    # note that sometimes you need to update the web framework command to update based on file changes
-    volumes:
-      # {local folder relative to compose.yaml file}:{location in docker container of the same folder you copied into}
-      # this volume is not managed by Docker, but sometimes there can be cruft. To clean up: docker compose down -v
-      - ./static_html/src:/app
-
   # you can then build other services and set out other configurations below, typically 1:1 between service to folder
   backend:
     build:
@@ -63,7 +37,9 @@ services:
     # Note that this is legacy, doesn't honor .dockerignore
     volumes:
       - ./backend/src:/app
-
+    # Make sure backend service waits on the db_service service
+    depends_on:
+      - db_service
     develop:
       # Must trigger by running: "docker compose up --watch"
       watch:
@@ -81,3 +57,52 @@ services:
         # - action: sync+restart
         #   path: backend/src/
         #   target: /app
+
+  # Goal: adding a postgres database
+  # DATABASE_URL=postgresql+psycopg://username:password@dbhost:dbport/dbname
+  # Creating a new database service where dbhost == db_service
+  db_service:
+    image: postgres:17.5
+    ports:
+      # Standard ports for postgres
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=dbuser
+      - POSTGRES_PASSWORD=db-password
+      - POSTGRES_DB=mydb
+    volumes:
+      # Want docker compose to create and destroy the volume for me (see below)
+      # No "./" file reference before to remember that it's a specific Docker managed volume below
+      # This is dangerous in production to accidentally delete all of your production data, better to use managed service
+      - dc_managed_db_volume:/var/lib/postgresl/data
+
+  # static_html: # custom key name, could even be "my_awesome_app"
+  #   # set argument names for Docker custom apps, cannot be customized
+  #   # Example argument: "image: python:3.13.4-slim-bullseye"
+
+  #   # Building a custom Docker container instead
+  #   build:
+  #     # where are we building the Dockerfile
+  #     # often easier to consolidate with the app you're running
+  #     context: ./static_html
+  #     # location of file
+  #     dockerfile: static.Dockerfile
+
+  #   # map ports available to local machine / container
+  #   ports:
+  #     - 8000:8000
+  #     - 3000:8000
+  #   command: python -m http.server 8000
+
+  #   # mount a local directory to a container, kinda like attaching an external drive
+  #   # static way to make changes with static files. cool!
+  #   # note that sometimes you need to update the web framework command to update based on file changes
+  #   volumes:
+  #     # {local folder relative to compose.yaml file}:{location in docker container of the same folder you copied into}
+  #     # this volume is not managed by Docker, but sometimes there can be cruft. To clean up: docker compose down -v
+  #     - ./static_html/src:/app
+
+volumes:
+  # docker composed managed database volume
+  # These volumes persist even when you docker compose down, have to add "-v" flag to delete the volume
+  dc_managed_db_volume:

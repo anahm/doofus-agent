@@ -2,6 +2,11 @@
 # FROM username/image_name:tag
 FROM python:3.13.4-slim-bullseye
 
+# Need to install curl
+# This is to run "host.docker.internal" instead of "localhost"
+# curl -X POST -d '{"message": "Hello world"}' -H "Content-Type: application/json" http://host.docker.internal:8080/api/chats/
+RUN apt-get update && apt-get install -y curl
+
 # Create a python virtual environment to isolate python from system-level python
 # (doesn't muck with system python functions)
 # Want to go into "optional software" in the venv to setup the Docker container

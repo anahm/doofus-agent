@@ -1,0 +1,1 @@
+# Module dedicated to the chat tables itself

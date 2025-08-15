@@ -33,6 +33,5 @@ if not API_KEY:
 def read_index():
     return {
         "hello": "are you there?",
-        "project name": MY_PROJECT,
-        "API_KEY": API_KEY
+        "project name": MY_PROJECT
     }

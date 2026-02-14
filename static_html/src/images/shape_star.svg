@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="300" height="200" fill="#fffbeb" rx="8"/>
+  <polygon points="150,15 170,75 235,75 182,112 200,170 150,138 100,170 118,112 65,75 130,75" fill="#f59e0b" stroke="#d97706" stroke-width="3"/>
+  <text x="150" y="195" text-anchor="middle" font-size="14" fill="#555" font-family="sans-serif">What shape is this?</text>
+</svg>

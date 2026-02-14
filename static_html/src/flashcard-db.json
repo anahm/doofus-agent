@@ -1,0 +1,154 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "input": "What is the capital of France?",
+      "answer": "Paris",
+      "type": "text"
+    },
+    {
+      "id": 2,
+      "input": "What is the capital of Japan?",
+      "answer": "Tokyo",
+      "type": "text"
+    },
+    {
+      "id": 3,
+      "input": "images/flag_italy.svg",
+      "answer": "Italy",
+      "type": "image"
+    },
+    {
+      "id": 4,
+      "input": "What is the largest planet in our solar system?",
+      "answer": "Jupiter",
+      "type": "text"
+    },
+    {
+      "id": 5,
+      "input": "images/flag_japan.svg",
+      "answer": "Japan",
+      "type": "image"
+    },
+    {
+      "id": 6,
+      "input": "What is the chemical symbol for gold?",
+      "answer": "Au",
+      "type": "text"
+    },
+    {
+      "id": 7,
+      "input": "images/shape_hexagon.svg",
+      "answer": "Hexagon",
+      "type": "image"
+    },
+    {
+      "id": 8,
+      "input": "What year did the first Moon landing occur?",
+      "answer": "1969",
+      "type": "text"
+    },
+    {
+      "id": 9,
+      "input": "What is the smallest prime number?",
+      "answer": "2",
+      "type": "text"
+    },
+    {
+      "id": 10,
+      "input": "images/flag_france.svg",
+      "answer": "France",
+      "type": "image"
+    },
+    {
+      "id": 11,
+      "input": "What is the powerhouse of the cell?",
+      "answer": "Mitochondria",
+      "type": "text"
+    },
+    {
+      "id": 12,
+      "input": "images/shape_triangle.svg",
+      "answer": "Triangle",
+      "type": "image"
+    },
+    {
+      "id": 13,
+      "input": "Who painted the Mona Lisa?",
+      "answer": "Leonardo da Vinci",
+      "type": "text"
+    },
+    {
+      "id": 14,
+      "input": "What is the boiling point of water in Celsius?",
+      "answer": "100",
+      "type": "text"
+    },
+    {
+      "id": 15,
+      "input": "images/animal_cat.svg",
+      "answer": "Cat",
+      "type": "image"
+    },
+    {
+      "id": 16,
+      "input": "What is the capital of Australia?",
+      "answer": "Canberra",
+      "type": "text"
+    },
+    {
+      "id": 17,
+      "input": "images/shape_star.svg",
+      "answer": "Star",
+      "type": "image"
+    },
+    {
+      "id": 18,
+      "input": "How many continents are there on Earth?",
+      "answer": "7",
+      "type": "text"
+    },
+    {
+      "id": 19,
+      "input": "What gas do plants absorb from the atmosphere?",
+      "answer": "Carbon dioxide",
+      "type": "text"
+    },
+    {
+      "id": 20,
+      "input": "images/animal_fish.svg",
+      "answer": "Fish",
+      "type": "image"
+    },
+    {
+      "id": 21,
+      "input": "What is the speed of light in km/s (approximately)?",
+      "answer": "300000",
+      "type": "text"
+    },
+    {
+      "id": 22,
+      "input": "images/flag_germany.svg",
+      "answer": "Germany",
+      "type": "image"
+    },
+    {
+      "id": 23,
+      "input": "What element has the atomic number 1?",
+      "answer": "Hydrogen",
+      "type": "text"
+    },
+    {
+      "id": 24,
+      "input": "Who wrote Romeo and Juliet?",
+      "answer": "Shakespeare",
+      "type": "text"
+    },
+    {
+      "id": 25,
+      "input": "images/shape_pentagon.svg",
+      "answer": "Pentagon",
+      "type": "image"
+    }
+  ]
+}

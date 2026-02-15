@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flashcard Game</title>
+  <title>Constellation Flashcard Game</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #0b1026 0%, #1a1040 50%, #0d0d2b 100%);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -141,8 +141,8 @@
   </style>
 </head>
 <body>
-  <h1>Flashcard Challenge</h1>
-  <p class="subtitle">Test your knowledge &mdash; 10 cards, how many can you get?</p>
+  <h1>Constellation Challenge</h1>
+  <p class="subtitle">Can you name the constellations? &mdash; 10 star maps, how many can you identify?</p>
 
   <div id="score-display">Score: 0 / 0</div>
   <div id="game-container">
@@ -337,13 +337,13 @@ function drawWelcomeScreen() {
   ctx.font = 'bold 36px system-ui, sans-serif';
   ctx.fillStyle = '#333';
   ctx.textAlign = 'center';
-  ctx.fillText('Flashcard Challenge', canvas.width / 2, 120);
+  ctx.fillText('Constellation Challenge', canvas.width / 2, 120);
 
   // Subtitle
   ctx.font = '18px system-ui, sans-serif';
   ctx.fillStyle = '#777';
-  ctx.fillText('10 random cards from the database', canvas.width / 2, 160);
-  ctx.fillText('Guess the answer to earn points!', canvas.width / 2, 185);
+  ctx.fillText('10 random star maps to identify', canvas.width / 2, 160);
+  ctx.fillText('Name the constellation to earn points!', canvas.width / 2, 185);
 
   // Card icon
   ctx.save();

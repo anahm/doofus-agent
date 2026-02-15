@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="300" height="200" fill="#0b1026" rx="8"/>
+  <!-- Aries -->
+  <!-- Hamal --> <circle cx="200" cy="70" r="4" fill="#ffcc88"/>
+  <!-- Sheratan --> <circle cx="155" cy="80" r="3.5" fill="#fff"/>
+  <!-- Mesarthim --> <circle cx="120" cy="90" r="3" fill="#fff"/>
+  <!-- 41 Ari --> <circle cx="85" cy="95" r="2" fill="#fff"/>
+  <g stroke="rgba(150,180,255,0.4)" stroke-width="1">
+    <line x1="85" y1="95" x2="120" y2="90"/>
+    <line x1="120" y1="90" x2="155" y2="80"/>
+    <line x1="155" y1="80" x2="200" y2="70"/>
+  </g>
+  <circle cx="50" cy="40" r="0.8" fill="#fff" opacity="0.3"/>
+  <circle cx="260" cy="140" r="0.8" fill="#fff" opacity="0.3"/>
+  <circle cx="40" cy="150" r="0.6" fill="#fff" opacity="0.2"/>
+  <circle cx="250" cy="40" r="0.6" fill="#fff" opacity="0.2"/>
+  <circle cx="150" cy="140" r="0.6" fill="#fff" opacity="0.2"/>
+  <text x="150" y="190" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.5)" font-family="sans-serif">What constellation is this?</text>
+</svg>

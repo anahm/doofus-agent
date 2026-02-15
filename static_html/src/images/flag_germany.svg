@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
-  <rect x="0" y="0" width="300" height="67" fill="#000"/>
-  <rect x="0" y="67" width="300" height="67" fill="#dd0000"/>
-  <rect x="0" y="134" width="300" height="66" fill="#ffcc00"/>
-  <text x="150" y="185" text-anchor="middle" font-size="14" fill="#555" font-family="sans-serif">Which country's flag is this?</text>
-</svg>

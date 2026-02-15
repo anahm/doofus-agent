@@ -2,152 +2,122 @@
   "cards": [
     {
       "id": 1,
-      "input": "What is the capital of France?",
-      "answer": "Paris",
-      "type": "text"
+      "input": "images/constellation_orion.svg",
+      "answer": "Orion",
+      "type": "image"
     },
     {
       "id": 2,
-      "input": "What is the capital of Japan?",
-      "answer": "Tokyo",
-      "type": "text"
+      "input": "images/constellation_ursa_major.svg",
+      "answer": "Ursa Major",
+      "type": "image"
     },
     {
       "id": 3,
-      "input": "images/flag_italy.svg",
-      "answer": "Italy",
+      "input": "images/constellation_ursa_minor.svg",
+      "answer": "Ursa Minor",
       "type": "image"
     },
     {
       "id": 4,
-      "input": "What is the largest planet in our solar system?",
-      "answer": "Jupiter",
-      "type": "text"
+      "input": "images/constellation_cassiopeia.svg",
+      "answer": "Cassiopeia",
+      "type": "image"
     },
     {
       "id": 5,
-      "input": "images/flag_japan.svg",
-      "answer": "Japan",
+      "input": "images/constellation_leo.svg",
+      "answer": "Leo",
       "type": "image"
     },
     {
       "id": 6,
-      "input": "What is the chemical symbol for gold?",
-      "answer": "Au",
-      "type": "text"
+      "input": "images/constellation_scorpius.svg",
+      "answer": "Scorpius",
+      "type": "image"
     },
     {
       "id": 7,
-      "input": "images/shape_hexagon.svg",
-      "answer": "Hexagon",
+      "input": "images/constellation_gemini.svg",
+      "answer": "Gemini",
       "type": "image"
     },
     {
       "id": 8,
-      "input": "What year did the first Moon landing occur?",
-      "answer": "1969",
-      "type": "text"
+      "input": "images/constellation_taurus.svg",
+      "answer": "Taurus",
+      "type": "image"
     },
     {
       "id": 9,
-      "input": "What is the smallest prime number?",
-      "answer": "2",
-      "type": "text"
+      "input": "images/constellation_canis_major.svg",
+      "answer": "Canis Major",
+      "type": "image"
     },
     {
       "id": 10,
-      "input": "images/flag_france.svg",
-      "answer": "France",
+      "input": "images/constellation_cygnus.svg",
+      "answer": "Cygnus",
       "type": "image"
     },
     {
       "id": 11,
-      "input": "What is the powerhouse of the cell?",
-      "answer": "Mitochondria",
-      "type": "text"
+      "input": "images/constellation_aquila.svg",
+      "answer": "Aquila",
+      "type": "image"
     },
     {
       "id": 12,
-      "input": "images/shape_triangle.svg",
-      "answer": "Triangle",
+      "input": "images/constellation_lyra.svg",
+      "answer": "Lyra",
       "type": "image"
     },
     {
       "id": 13,
-      "input": "Who painted the Mona Lisa?",
-      "answer": "Leonardo da Vinci",
-      "type": "text"
+      "input": "images/constellation_sagittarius.svg",
+      "answer": "Sagittarius",
+      "type": "image"
     },
     {
       "id": 14,
-      "input": "What is the boiling point of water in Celsius?",
-      "answer": "100",
-      "type": "text"
+      "input": "images/constellation_pisces.svg",
+      "answer": "Pisces",
+      "type": "image"
     },
     {
       "id": 15,
-      "input": "images/animal_cat.svg",
-      "answer": "Cat",
+      "input": "images/constellation_aries.svg",
+      "answer": "Aries",
       "type": "image"
     },
     {
       "id": 16,
-      "input": "What is the capital of Australia?",
-      "answer": "Canberra",
-      "type": "text"
+      "input": "images/constellation_virgo.svg",
+      "answer": "Virgo",
+      "type": "image"
     },
     {
       "id": 17,
-      "input": "images/shape_star.svg",
-      "answer": "Star",
+      "input": "images/constellation_libra.svg",
+      "answer": "Libra",
       "type": "image"
     },
     {
       "id": 18,
-      "input": "How many continents are there on Earth?",
-      "answer": "7",
-      "type": "text"
+      "input": "images/constellation_capricornus.svg",
+      "answer": "Capricornus",
+      "type": "image"
     },
     {
       "id": 19,
-      "input": "What gas do plants absorb from the atmosphere?",
-      "answer": "Carbon dioxide",
-      "type": "text"
+      "input": "images/constellation_aquarius.svg",
+      "answer": "Aquarius",
+      "type": "image"
     },
     {
       "id": 20,
-      "input": "images/animal_fish.svg",
-      "answer": "Fish",
-      "type": "image"
-    },
-    {
-      "id": 21,
-      "input": "What is the speed of light in km/s (approximately)?",
-      "answer": "300000",
-      "type": "text"
-    },
-    {
-      "id": 22,
-      "input": "images/flag_germany.svg",
-      "answer": "Germany",
-      "type": "image"
-    },
-    {
-      "id": 23,
-      "input": "What element has the atomic number 1?",
-      "answer": "Hydrogen",
-      "type": "text"
-    },
-    {
-      "id": 24,
-      "input": "Who wrote Romeo and Juliet?",
-      "answer": "Shakespeare",
-      "type": "text"
-    },
-    {
-      "id": 25,
-      "input": "images/shape_pentagon.svg",
-      "answer": "Pentagon",
+      "input": "images/constellation_crux.svg",
+      "answer": "Crux",
       "type": "image"
     }
   ]

@@ -1,7 +1,0 @@
-fastapi==0.115.12
-uvicorn[standard]
-requests
-duckdb
-beautifulsoup4
-sqlmodel # sqlite, mysql, postgres, mariadb
-psycopg[binary] # v3 -> specifically for postgres with python

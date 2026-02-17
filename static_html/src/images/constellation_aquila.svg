@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="300" height="200" fill="#0b1026" rx="8"/>
+  <!-- Aquila -->
+  <!-- Altair --> <circle cx="150" cy="70" r="4.5" fill="#fff"/>
+  <!-- Tarazed --> <circle cx="140" cy="50" r="3" fill="#ffcc88"/>
+  <!-- Alshain --> <circle cx="165" cy="85" r="2.5" fill="#fff"/>
+  <!-- Theta --> <circle cx="100" cy="95" r="2.5" fill="#fff"/>
+  <!-- Delta --> <circle cx="115" cy="125" r="2.5" fill="#fff"/>
+  <!-- Lambda --> <circle cx="190" cy="115" r="2.5" fill="#fff"/>
+  <!-- Zeta --> <circle cx="200" cy="55" r="2.5" fill="#fff"/>
+  <g stroke="rgba(150,180,255,0.4)" stroke-width="1">
+    <line x1="140" y1="50" x2="150" y2="70"/>
+    <line x1="150" y1="70" x2="165" y2="85"/>
+    <line x1="150" y1="70" x2="100" y2="95"/>
+    <line x1="100" y1="95" x2="115" y2="125"/>
+    <line x1="150" y1="70" x2="190" y2="115"/>
+    <line x1="150" y1="70" x2="200" y2="55"/>
+  </g>
+  <circle cx="50" cy="40" r="0.8" fill="#fff" opacity="0.3"/>
+  <circle cx="270" cy="150" r="0.8" fill="#fff" opacity="0.3"/>
+  <circle cx="40" cy="160" r="0.6" fill="#fff" opacity="0.2"/>
+  <text x="150" y="190" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.5)" font-family="sans-serif">What constellation is this?</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="300" height="200" fill="#0b1026" rx="8"/>
+  <!-- Cygnus (Northern Cross) -->
+  <!-- Deneb --> <circle cx="150" cy="30" r="4" fill="#aaddff"/>
+  <!-- Sadr --> <circle cx="150" cy="80" r="3.5" fill="#ffe8aa"/>
+  <!-- Gienah --> <circle cx="150" cy="140" r="3" fill="#fff"/>
+  <!-- Delta Cyg --> <circle cx="95" cy="95" r="2.5" fill="#fff"/>
+  <!-- Albireo --> <circle cx="200" cy="100" r="3" fill="#ffcc44"/>
+  <!-- Epsilon --> <circle cx="110" cy="55" r="2.5" fill="#fff"/>
+  <g stroke="rgba(150,180,255,0.4)" stroke-width="1">
+    <line x1="150" y1="30" x2="150" y2="80"/>
+    <line x1="150" y1="80" x2="150" y2="140"/>
+    <line x1="95" y1="95" x2="150" y2="80"/>
+    <line x1="150" y1="80" x2="200" y2="100"/>
+    <line x1="150" y1="30" x2="110" y2="55"/>
+  </g>
+  <circle cx="50" cy="150" r="0.8" fill="#fff" opacity="0.3"/>
+  <circle cx="260" cy="40" r="0.8" fill="#fff" opacity="0.3"/>
+  <circle cx="270" cy="160" r="0.6" fill="#fff" opacity="0.2"/>
+  <circle cx="40" cy="40" r="0.6" fill="#fff" opacity="0.2"/>
+  <text x="150" y="190" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.5)" font-family="sans-serif">What constellation is this?</text>
+</svg>

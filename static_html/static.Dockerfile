@@ -8,7 +8,7 @@ WORKDIR /app
 
 # Ensures a folder is in the container: RUN mkdir -p /static_folder
 # Copy a local folder into the container, relative to the dockerfile itself
-COPY ./src /app
+COPY . /app
 
 # Create an HTML file with a specific Linux command
 # RUN echo "hello" > index.html

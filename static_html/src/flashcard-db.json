@@ -1,0 +1,124 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "input": "images/constellation_orion.svg",
+      "answer": "Orion",
+      "type": "image"
+    },
+    {
+      "id": 2,
+      "input": "images/constellation_ursa_major.svg",
+      "answer": "Ursa Major",
+      "type": "image"
+    },
+    {
+      "id": 3,
+      "input": "images/constellation_ursa_minor.svg",
+      "answer": "Ursa Minor",
+      "type": "image"
+    },
+    {
+      "id": 4,
+      "input": "images/constellation_cassiopeia.svg",
+      "answer": "Cassiopeia",
+      "type": "image"
+    },
+    {
+      "id": 5,
+      "input": "images/constellation_leo.svg",
+      "answer": "Leo",
+      "type": "image"
+    },
+    {
+      "id": 6,
+      "input": "images/constellation_scorpius.svg",
+      "answer": "Scorpius",
+      "type": "image"
+    },
+    {
+      "id": 7,
+      "input": "images/constellation_gemini.svg",
+      "answer": "Gemini",
+      "type": "image"
+    },
+    {
+      "id": 8,
+      "input": "images/constellation_taurus.svg",
+      "answer": "Taurus",
+      "type": "image"
+    },
+    {
+      "id": 9,
+      "input": "images/constellation_canis_major.svg",
+      "answer": "Canis Major",
+      "type": "image"
+    },
+    {
+      "id": 10,
+      "input": "images/constellation_cygnus.svg",
+      "answer": "Cygnus",
+      "type": "image"
+    },
+    {
+      "id": 11,
+      "input": "images/constellation_aquila.svg",
+      "answer": "Aquila",
+      "type": "image"
+    },
+    {
+      "id": 12,
+      "input": "images/constellation_lyra.svg",
+      "answer": "Lyra",
+      "type": "image"
+    },
+    {
+      "id": 13,
+      "input": "images/constellation_sagittarius.svg",
+      "answer": "Sagittarius",
+      "type": "image"
+    },
+    {
+      "id": 14,
+      "input": "images/constellation_pisces.svg",
+      "answer": "Pisces",
+      "type": "image"
+    },
+    {
+      "id": 15,
+      "input": "images/constellation_aries.svg",
+      "answer": "Aries",
+      "type": "image"
+    },
+    {
+      "id": 16,
+      "input": "images/constellation_virgo.svg",
+      "answer": "Virgo",
+      "type": "image"
+    },
+    {
+      "id": 17,
+      "input": "images/constellation_libra.svg",
+      "answer": "Libra",
+      "type": "image"
+    },
+    {
+      "id": 18,
+      "input": "images/constellation_capricornus.svg",
+      "answer": "Capricornus",
+      "type": "image"
+    },
+    {
+      "id": 19,
+      "input": "images/constellation_aquarius.svg",
+      "answer": "Aquarius",
+      "type": "image"
+    },
+    {
+      "id": 20,
+      "input": "images/constellation_crux.svg",
+      "answer": "Crux",
+      "type": "image"
+    }
+  ]
+}

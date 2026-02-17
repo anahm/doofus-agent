@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="300" height="200" fill="#0b1026" rx="8"/>
+  <!-- Aquarius -->
+  <!-- Sadalsuud --> <circle cx="130" cy="40" r="3.5" fill="#ffe8aa"/>
+  <!-- Sadalmelik --> <circle cx="170" cy="50" r="3.5" fill="#fff"/>
+  <!-- Sadachbia --> <circle cx="150" cy="75" r="2.5" fill="#fff"/>
+  <!-- Ancha --> <circle cx="170" cy="95" r="2.5" fill="#fff"/>
+  <!-- Skat --> <circle cx="110" cy="115" r="3" fill="#fff"/>
+  <!-- Lambda --> <circle cx="85" cy="135" r="2.5" fill="#fff"/>
+  <!-- Water stream -->
+  <circle cx="135" cy="130" r="2" fill="#aaddff"/>
+  <circle cx="155" cy="140" r="2" fill="#aaddff"/>
+  <circle cx="170" cy="150" r="2" fill="#aaddff"/>
+  <circle cx="195" cy="145" r="2" fill="#aaddff"/>
+  <g stroke="rgba(150,180,255,0.4)" stroke-width="1">
+    <line x1="130" y1="40" x2="170" y2="50"/>
+    <line x1="170" y1="50" x2="150" y2="75"/>
+    <line x1="130" y1="40" x2="150" y2="75"/>
+    <line x1="150" y1="75" x2="170" y2="95"/>
+    <line x1="170" y1="95" x2="110" y2="115"/>
+    <line x1="110" y1="115" x2="85" y2="135"/>
+    <line x1="110" y1="115" x2="135" y2="130"/>
+    <line x1="135" y1="130" x2="155" y2="140"/>
+    <line x1="155" y1="140" x2="170" y2="150"/>
+    <line x1="170" y1="150" x2="195" y2="145"/>
+  </g>
+  <circle cx="40" cy="90" r="0.8" fill="#fff" opacity="0.3"/>
+  <circle cx="260" cy="60" r="0.8" fill="#fff" opacity="0.3"/>
+  <circle cx="250" cy="160" r="0.6" fill="#fff" opacity="0.2"/>
+  <text x="150" y="190" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.5)" font-family="sans-serif">What constellation is this?</text>
+</svg>

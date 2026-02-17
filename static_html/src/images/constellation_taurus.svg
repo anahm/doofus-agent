@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="300" height="200" fill="#0b1026" rx="8"/>
+  <!-- Taurus -->
+  <!-- Aldebaran --> <circle cx="180" cy="85" r="4.5" fill="#ff8844"/>
+  <!-- Elnath --> <circle cx="80" cy="30" r="3.5" fill="#cce0ff"/>
+  <!-- Zeta Tau --> <circle cx="100" cy="75" r="2.5" fill="#fff"/>
+  <!-- Tianguan --> <circle cx="120" cy="65" r="2.5" fill="#fff"/>
+  <!-- Ain --> <circle cx="195" cy="80" r="2.5" fill="#fff"/>
+  <!-- Hyadum --> <circle cx="210" cy="95" r="2.5" fill="#fff"/>
+  <!-- Theta Tau --> <circle cx="200" cy="105" r="2" fill="#fff"/>
+  <!-- Pleiades cluster -->
+  <circle cx="60" cy="110" r="2" fill="#aaccff"/>
+  <circle cx="55" cy="118" r="1.5" fill="#aaccff"/>
+  <circle cx="65" cy="120" r="1.5" fill="#aaccff"/>
+  <circle cx="50" cy="125" r="1.5" fill="#aaccff"/>
+  <circle cx="68" cy="128" r="1.5" fill="#aaccff"/>
+  <circle cx="58" cy="130" r="1.5" fill="#aaccff"/>
+  <g stroke="rgba(150,180,255,0.4)" stroke-width="1">
+    <line x1="80" y1="30" x2="120" y2="65"/>
+    <line x1="120" y1="65" x2="100" y2="75"/>
+    <line x1="120" y1="65" x2="180" y2="85"/>
+    <line x1="180" y1="85" x2="195" y2="80"/>
+    <line x1="180" y1="85" x2="210" y2="95"/>
+    <line x1="210" y1="95" x2="200" y2="105"/>
+  </g>
+  <circle cx="250" cy="40" r="0.8" fill="#fff" opacity="0.3"/>
+  <circle cx="270" cy="150" r="0.6" fill="#fff" opacity="0.2"/>
+  <circle cx="150" cy="155" r="0.6" fill="#fff" opacity="0.2"/>
+  <text x="150" y="190" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.5)" font-family="sans-serif">What constellation is this?</text>
+</svg>

@@ -210,12 +210,9 @@ def capture_slides(page, total_slides=None):
     max_slides = total_slides or 200  # safety cap
     prev_screenshot = None
 
-    # Try to find slide element for clipped screenshots (avoids popups)
-    slide_el = find_slide_element(page)
-    if slide_el:
-        print("Found slide element - will capture clipped screenshots.")
-    else:
-        print("Could not find slide element - will capture full viewport.")
+    # In fullscreen mode, the viewport IS the slide - no need to find element
+    print("Capturing full viewport (fullscreen mode).")
+    slide_el = None  # Force viewport capture for cleaner fullscreen shots
 
     while slide_index < max_slides:
         # Take screenshot (clipped to slide element if found, otherwise full viewport)
@@ -302,72 +299,71 @@ def main():
         # Handle email-gated presentations
         handle_email_prompt(page, args.email)
 
-        # Debug pause to allow inspection
+        # Wait for page to stabilize
+        time.sleep(2)
+
+        # Debug pause to allow inspection BEFORE entering fullscreen
         if args.debug:
             input("Debug mode: Press Enter to continue (inspect the page now)...")
 
-        # Dismiss any cookie banners or modals that may overlay content
-        for dismiss_sel in [
-            'button:has-text("Accept")',
-            'button:has-text("Got it")',
-            'button:has-text("Close")',
-            '[aria-label="Close"]',
-        ]:
-            try:
-                btn = page.query_selector(dismiss_sel)
-                if btn and btn.is_visible():
-                    btn.click()
-                    time.sleep(0.3)
-            except Exception:
-                pass
-
-        # Try to enter presentation / fullscreen mode for clean captures
-        # pitch.com often supports pressing 'f' or clicking a present button
-        present_selectors = [
-            'button:has-text("Present")',
-            '[data-testid="present-button"]',
-            '[aria-label="Present"]',
-        ]
-        entered_present = False
-        for sel in present_selectors:
-            try:
-                btn = page.query_selector(sel)
-                if btn and btn.is_visible():
-                    btn.click()
-                    time.sleep(1)
-                    entered_present = True
-                    print("Entered presentation mode.")
-                    break
-            except Exception:
-                pass
-
-        if not entered_present:
-            # Click on the slide area to make sure it has focus
-            page.mouse.click(960, 540)
-            time.sleep(0.5)
-
-        # Detect slide count
+        # Detect slide count before going fullscreen (easier to find in normal view)
         total = detect_slide_count(page)
         if total:
             print(f"Detected {total} slides.")
         else:
             print("Could not detect slide count; will use duplicate detection to find the end.")
 
+        # Click on the slide area to give it focus
+        page.mouse.click(960, 540)
+        time.sleep(0.5)
+
+        # Enter fullscreen presentation mode by pressing 'f'
+        print("Entering fullscreen presentation mode...")
+        page.keyboard.press("f")
+        time.sleep(2)  # Wait for fullscreen transition
+
+        # Forcibly remove any popups/modals via JavaScript
+        page.evaluate("""
+            () => {
+                // Remove elements that look like popups/modals
+                const selectors = [
+                    '[role="dialog"]',
+                    '[class*="modal" i]',
+                    '[class*="Modal"]',
+                    '[class*="popup" i]',
+                    '[class*="Popup"]',
+                    '[class*="Popover"]',
+                    '[class*="popover"]',
+                    '[class*="tooltip" i]',
+                    '[class*="Tooltip"]',
+                    '[class*="drawer" i]',
+                    '[class*="Drawer"]',
+                ];
+                for (const sel of selectors) {
+                    document.querySelectorAll(sel).forEach(el => el.remove());
+                }
+                // Also remove any fixed/absolute positioned elements that might be overlays
+                document.querySelectorAll('*').forEach(el => {
+                    const style = window.getComputedStyle(el);
+                    if ((style.position === 'fixed' || style.position === 'absolute') &&
+                        style.zIndex > 100 &&
+                        !el.closest('canvas') &&
+                        !el.closest('[class*="slide" i]') &&
+                        !el.closest('[class*="player" i]')) {
+                        // Check if it looks like a popup (small-ish, not full screen)
+                        const rect = el.getBoundingClientRect();
+                        if (rect.width < window.innerWidth * 0.5 && rect.height < window.innerHeight * 0.5) {
+                            el.remove();
+                        }
+                    }
+                });
+            }
+        """)
+        time.sleep(0.5)
+
         # Hide cursor from captures by moving it off-screen
         page.mouse.move(0, 0)
         time.sleep(0.3)
-
-        # Inject CSS to hide any popups/modals that might overlay the slides
-        page.add_style_tag(content="""
-            [class*="modal" i], [class*="Modal" i],
-            [class*="popup" i], [class*="Popup" i],
-            [class*="overlay" i]:not([class*="slide" i]),
-            [class*="dialog" i], [role="dialog"],
-            [class*="banner" i], [class*="toast" i] {
-                display: none !important;
-                visibility: hidden !important;
-            }
-        """)
 
         # Capture all slides
         print("Capturing slides...")

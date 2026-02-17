@@ -1,2 +1,3 @@
 # Main file you want to monitor for what goes into production
 .env.sample
+.DS_Store

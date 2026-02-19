@@ -9,26 +9,27 @@
 
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: linear-gradient(135deg, #0b1026 0%, #1a1040 50%, #0d0d2b 100%);
+      background: #0a0a0f;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
     h1 {
-      color: #fff;
-      font-size: 2.2rem;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.8rem;
+      font-weight: 500;
       margin-bottom: 8px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      letter-spacing: 0.02em;
     }
 
     .subtitle {
-      color: rgba(255,255,255,0.8);
-      font-size: 1rem;
-      margin-bottom: 24px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
     }
 
     #game-container {
@@ -39,55 +40,53 @@
 
     canvas {
       display: block;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      border-radius: 12px;
     }
 
     #input-area {
       display: none;
-      margin-top: 20px;
+      margin-top: 28px;
       text-align: center;
     }
 
     #guess-input {
       width: 320px;
-      max-width: 80%;
+      max-width: 70%;
       padding: 14px 20px;
-      font-size: 1.1rem;
-      border: 3px solid rgba(255,255,255,0.3);
-      border-radius: 12px;
-      background: rgba(255,255,255,0.95);
-      color: #333;
+      font-size: 1rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.9);
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: border-color 0.2s, background 0.2s;
     }
 
     #guess-input:focus {
-      border-color: #667eea;
-      box-shadow: 0 0 0 4px rgba(102,126,234,0.3);
+      border-color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.08);
     }
 
     #guess-input::placeholder {
-      color: #aaa;
+      color: rgba(255,255,255,0.35);
     }
 
     #submit-btn {
-      margin-left: 10px;
+      margin-left: 12px;
       padding: 14px 28px;
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 500;
       border: none;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #f093fb, #f5576c);
-      color: #fff;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.9);
+      color: #0a0a0f;
       cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 4px 15px rgba(245,87,108,0.4);
+      transition: background 0.2s, transform 0.15s;
     }
 
     #submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(245,87,108,0.5);
+      background: rgba(255,255,255,1);
+      transform: translateY(-1px);
     }
 
     #submit-btn:active {
@@ -96,47 +95,47 @@
 
     .btn-generic {
       display: none;
-      margin-top: 20px;
+      margin-top: 28px;
       padding: 14px 36px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #43e97b, #38f9d7);
-      color: #1a1a2e;
+      font-size: 1rem;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      background: transparent;
+      color: rgba(255,255,255,0.8);
       cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 4px 15px rgba(67,233,123,0.4);
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
     }
 
     .btn-generic:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(67,233,123,0.5);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.3);
+      transform: translateY(-1px);
     }
 
     #progress-bar {
       width: 100%;
-      height: 6px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 3px;
-      margin-bottom: 16px;
+      height: 2px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 1px;
+      margin-bottom: 24px;
       overflow: hidden;
     }
 
     #progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, #43e97b, #38f9d7);
-      border-radius: 3px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 1px;
       transition: width 0.4s ease;
       width: 0%;
     }
 
     #score-display {
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      letter-spacing: 0.03em;
     }
   </style>
 </head>
@@ -153,7 +152,7 @@
       <button id="submit-btn">Submit</button>
     </div>
     <button id="next-btn" class="btn-generic">Next Card</button>
-    <button id="start-btn" class="btn-generic" style="display:inline-block;">Start Game</button>
+    <button id="start-btn" class="btn-generic" style="display:inline-block;background:rgba(255,255,255,0.9);color:#0a0a0f;border:none;">Start Game</button>
     <button id="restart-btn" class="btn-generic">Play Again</button>
   </div>
 
@@ -215,31 +214,14 @@ function drawRoundRect(x, y, w, h, r, fill, stroke) {
 }
 
 function drawCardBackground() {
-  // Soft card background
-  ctx.save();
-  ctx.shadowColor = 'rgba(0,0,0,0.12)';
-  ctx.shadowBlur = 20;
-  ctx.shadowOffsetY = 8;
-  drawRoundRect(40, 20, 520, 380, 20, '#ffffff', null);
-  ctx.restore();
+  // Dark background matching image backgrounds
+  ctx.fillStyle = '#0a0a0f';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Decorative top accent
-  ctx.save();
-  ctx.beginPath();
-  ctx.moveTo(60, 20);
-  ctx.lineTo(540, 20);
-  ctx.quadraticCurveTo(560, 20, 560, 40);
-  ctx.lineTo(560, 28);
-  ctx.lineTo(40, 28);
-  ctx.lineTo(40, 40);
-  ctx.quadraticCurveTo(40, 20, 60, 20);
-  ctx.closePath();
-  const accent = ctx.createLinearGradient(40, 20, 560, 20);
-  accent.addColorStop(0, '#667eea');
-  accent.addColorStop(1, '#764ba2');
-  ctx.fillStyle = accent;
-  ctx.fill();
-  ctx.restore();
+  // Subtle border
+  ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+  ctx.lineWidth = 1;
+  drawRoundRect(0, 0, canvas.width, canvas.height, 12, null, 'rgba(255,255,255,0.08)');
 }
 
 function drawWrappedText(text, x, y, maxWidth, lineHeight, font, color) {
@@ -265,26 +247,26 @@ function drawWrappedText(text, x, y, maxWidth, lineHeight, font, color) {
 
 function drawCardNumber() {
   ctx.save();
-  ctx.font = 'bold 14px system-ui, sans-serif';
-  ctx.fillStyle = 'rgba(255,255,255,0.9)';
+  ctx.font = '13px system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.4)';
   ctx.textAlign = 'right';
-  ctx.fillText(`${currentIndex + 1} / ${gameCards.length}`, 545, 17);
+  ctx.fillText(`${currentIndex + 1} / ${gameCards.length}`, 575, 25);
   ctx.restore();
 }
 
 // --- Particle system for correct answers ---
 function spawnParticles(cx, cy) {
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 20; i++) {
     const angle = Math.random() * Math.PI * 2;
-    const speed = 2 + Math.random() * 4;
+    const speed = 1.5 + Math.random() * 3;
     particles.push({
       x: cx, y: cy,
       vx: Math.cos(angle) * speed,
-      vy: Math.sin(angle) * speed - 2,
+      vy: Math.sin(angle) * speed - 1.5,
       life: 1,
-      decay: 0.015 + Math.random() * 0.02,
-      size: 3 + Math.random() * 5,
-      color: ['#f093fb','#43e97b','#667eea','#f5576c','#ffd700'][Math.floor(Math.random()*5)]
+      decay: 0.02 + Math.random() * 0.02,
+      size: 2 + Math.random() * 3,
+      color: ['rgba(255,255,255,0.8)','rgba(255,255,255,0.6)','rgba(200,200,220,0.7)'][Math.floor(Math.random()*3)]
     });
   }
 }
@@ -315,268 +297,243 @@ function drawParticles() {
 // --- Screens ---
 function drawWelcomeScreen() {
   clearCanvas();
-  // Background
-  const bg = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-  bg.addColorStop(0, '#f8f9ff');
-  bg.addColorStop(1, '#e8ecff');
-  drawRoundRect(0, 0, canvas.width, canvas.height, 20, null, null);
-  ctx.fillStyle = bg;
+  // Dark background
+  ctx.fillStyle = '#0a0a0f';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Decorative card shapes
+  // Subtle star dots
   ctx.save();
-  ctx.globalAlpha = 0.08;
-  for (let i = 0; i < 6; i++) {
-    const x = 50 + i * 90;
-    const y = 280 + Math.sin(i * 1.2) * 30;
-    drawRoundRect(x, y, 70, 90, 10, '#667eea', null);
+  for (let i = 0; i < 40; i++) {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    const size = Math.random() * 1.5 + 0.5;
+    ctx.fillStyle = `rgba(255,255,255,${Math.random() * 0.3 + 0.1})`;
+    ctx.beginPath();
+    ctx.arc(x, y, size, 0, Math.PI * 2);
+    ctx.fill();
   }
   ctx.restore();
 
   // Title
-  ctx.font = 'bold 36px system-ui, sans-serif';
-  ctx.fillStyle = '#333';
+  ctx.font = '500 28px system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.9)';
   ctx.textAlign = 'center';
-  ctx.fillText('Constellation Challenge', canvas.width / 2, 120);
+  ctx.fillText('Constellation Challenge', canvas.width / 2, 140);
 
   // Subtitle
-  ctx.font = '18px system-ui, sans-serif';
-  ctx.fillStyle = '#777';
-  ctx.fillText('10 random star maps to identify', canvas.width / 2, 160);
-  ctx.fillText('Name the constellation to earn points!', canvas.width / 2, 185);
+  ctx.font = '16px system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.4)';
+  ctx.fillText('10 star maps to identify', canvas.width / 2, 180);
 
-  // Card icon
+  // Decorative constellation dots
   ctx.save();
-  ctx.translate(canvas.width / 2, 240);
-  ctx.rotate(-0.15);
-  drawRoundRect(-40, -30, 80, 60, 8, '#667eea', null);
-  ctx.rotate(0.3);
-  drawRoundRect(-40, -30, 80, 60, 8, '#f093fb', null);
-  ctx.font = 'bold 24px system-ui, sans-serif';
-  ctx.fillStyle = '#fff';
-  ctx.textAlign = 'center';
-  ctx.fillText('?', 0, 6);
+  const dots = [
+    {x: 240, y: 260}, {x: 280, y: 240}, {x: 320, y: 255},
+    {x: 360, y: 235}, {x: 340, y: 280}
+  ];
+  ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(dots[0].x, dots[0].y);
+  for (let i = 1; i < dots.length; i++) {
+    ctx.lineTo(dots[i].x, dots[i].y);
+  }
+  ctx.stroke();
+  for (const dot of dots) {
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+    ctx.beginPath();
+    ctx.arc(dot.x, dot.y, 3, 0, Math.PI * 2);
+    ctx.fill();
+  }
   ctx.restore();
 
-  ctx.font = '15px system-ui, sans-serif';
-  ctx.fillStyle = '#999';
+  ctx.font = '14px system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.3)';
   ctx.textAlign = 'center';
   ctx.fillText(`${allCards.length} cards loaded`, canvas.width / 2, 380);
 }
 
 function drawQuestionCard(card) {
   clearCanvas();
-
-  // Canvas background
-  const bg = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-  bg.addColorStop(0, '#f0f0ff');
-  bg.addColorStop(1, '#fce4ff');
-  ctx.fillStyle = bg;
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
   drawCardBackground();
   drawCardNumber();
 
   if (card.type === 'image' && loadedImage) {
-    // Draw the image centered on the card
-    const maxW = 440;
-    const maxH = 280;
+    // Draw the image centered - sized to fill more of the canvas
+    const maxW = 500;
+    const maxH = 340;
     let w = loadedImage.width;
     let h = loadedImage.height;
     const scale = Math.min(maxW / w, maxH / h, 1);
     w *= scale;
     h *= scale;
     const ix = (canvas.width - w) / 2;
-    const iy = 50 + (300 - h) / 2;
+    const iy = 40 + (360 - h) / 2;
     ctx.drawImage(loadedImage, ix, iy, w, h);
   } else {
     // Draw text question
-    // Question mark icon
-    ctx.font = 'bold 48px system-ui, sans-serif';
-    ctx.fillStyle = '#e0e0ff';
+    ctx.font = '500 20px system-ui, sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.3)';
     ctx.textAlign = 'center';
-    ctx.fillText('?', canvas.width / 2, 90);
+    ctx.fillText('?', canvas.width / 2, 100);
 
     drawWrappedText(
-      card.input, canvas.width / 2, 180,
-      440, 36, '24px system-ui, sans-serif', '#333'
+      card.input, canvas.width / 2, 200,
+      480, 32, '20px system-ui, sans-serif', 'rgba(255,255,255,0.85)'
     );
   }
 
-  // "Type your answer below" hint
-  ctx.font = '14px system-ui, sans-serif';
-  ctx.fillStyle = '#aaa';
+  // Hint
+  ctx.font = '13px system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.25)';
   ctx.textAlign = 'center';
-  ctx.fillText('Type your answer below and press Submit', canvas.width / 2, 385);
+  ctx.fillText('Type your answer below', canvas.width / 2, 400);
 }
 
 function drawAnswerReveal(card, userAnswer, isCorrect) {
   clearCanvas();
-
-  const bg = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-  if (isCorrect) {
-    bg.addColorStop(0, '#e8ffe8');
-    bg.addColorStop(1, '#c6ffd0');
-  } else {
-    bg.addColorStop(0, '#fff0f0');
-    bg.addColorStop(1, '#ffe0e0');
-  }
-  ctx.fillStyle = bg;
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
   drawCardBackground();
   drawCardNumber();
 
-  // Result badge
-  const badgeY = 60;
-  const badgeText = isCorrect ? 'Correct!' : 'Not quite!';
-  const badgeColor = isCorrect ? '#22c55e' : '#ef4444';
-  const badgeBg = isCorrect ? '#dcfce7' : '#fee2e2';
-
-  ctx.save();
-  const badgeW = 180;
-  const badgeH = 40;
-  const badgeX = (canvas.width - badgeW) / 2;
-  drawRoundRect(badgeX, badgeY, badgeW, badgeH, badgeH / 2, badgeBg, badgeColor);
-  ctx.font = 'bold 20px system-ui, sans-serif';
-  ctx.fillStyle = badgeColor;
+  // Result text
+  const resultY = 80;
+  const resultText = isCorrect ? 'Correct' : 'Incorrect';
+  ctx.font = '500 18px system-ui, sans-serif';
+  ctx.fillStyle = isCorrect ? 'rgba(134,239,172,0.9)' : 'rgba(248,113,113,0.8)';
   ctx.textAlign = 'center';
-  ctx.fillText(badgeText, canvas.width / 2, badgeY + 27);
-  ctx.restore();
+  ctx.fillText(resultText, canvas.width / 2, resultY);
 
   // Your answer
-  ctx.font = '16px system-ui, sans-serif';
-  ctx.fillStyle = '#888';
-  ctx.textAlign = 'center';
-  ctx.fillText('Your answer:', canvas.width / 2, 140);
+  ctx.font = '14px system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.4)';
+  ctx.fillText('Your answer', canvas.width / 2, 140);
 
-  ctx.font = 'bold 22px system-ui, sans-serif';
-  ctx.fillStyle = isCorrect ? '#16a34a' : '#dc2626';
+  ctx.font = '500 20px system-ui, sans-serif';
+  ctx.fillStyle = isCorrect ? 'rgba(134,239,172,0.9)' : 'rgba(248,113,113,0.8)';
   ctx.fillText(userAnswer || '(no answer)', canvas.width / 2, 170);
 
   // Correct answer
-  ctx.font = '16px system-ui, sans-serif';
-  ctx.fillStyle = '#888';
-  ctx.fillText('Correct answer:', canvas.width / 2, 220);
+  ctx.font = '14px system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.4)';
+  ctx.fillText('Correct answer', canvas.width / 2, 230);
 
-  ctx.font = 'bold 28px system-ui, sans-serif';
-  ctx.fillStyle = '#333';
-  ctx.fillText(card.answer, canvas.width / 2, 258);
+  ctx.font = '500 24px system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.9)';
+  ctx.fillText(card.answer, canvas.width / 2, 265);
 
   // Divider
   ctx.beginPath();
-  ctx.moveTo(150, 285);
-  ctx.lineTo(450, 285);
-  ctx.strokeStyle = '#e0e0e0';
+  ctx.moveTo(180, 300);
+  ctx.lineTo(420, 300);
+  ctx.strokeStyle = 'rgba(255,255,255,0.1)';
   ctx.lineWidth = 1;
   ctx.stroke();
 
   // Running score
-  ctx.font = '18px system-ui, sans-serif';
-  ctx.fillStyle = '#666';
+  ctx.font = '15px system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.5)';
   ctx.textAlign = 'center';
-  ctx.fillText(`Score so far: ${score} out of ${answered}`, canvas.width / 2, 320);
+  ctx.fillText(`${score} of ${answered} correct`, canvas.width / 2, 340);
 
   // Progress dots
-  const dotStartX = canvas.width / 2 - (gameCards.length * 18) / 2;
+  const dotStartX = canvas.width / 2 - (gameCards.length * 16) / 2;
   for (let i = 0; i < gameCards.length; i++) {
     ctx.beginPath();
-    ctx.arc(dotStartX + i * 18, 355, 6, 0, Math.PI * 2);
+    ctx.arc(dotStartX + i * 16, 375, 4, 0, Math.PI * 2);
     if (i < answered) {
-      ctx.fillStyle = i < answered && gameCards[i]._correct ? '#22c55e' : '#ef4444';
+      ctx.fillStyle = gameCards[i]._correct ? 'rgba(134,239,172,0.8)' : 'rgba(248,113,113,0.6)';
       if (i === answered - 1) {
-        ctx.fillStyle = isCorrect ? '#22c55e' : '#ef4444';
+        ctx.fillStyle = isCorrect ? 'rgba(134,239,172,0.8)' : 'rgba(248,113,113,0.6)';
       }
     } else {
-      ctx.fillStyle = '#e0e0e0';
+      ctx.fillStyle = 'rgba(255,255,255,0.15)';
     }
     ctx.fill();
   }
 
   // Particles for correct
   if (isCorrect) {
-    spawnParticles(canvas.width / 2, badgeY + 20);
+    spawnParticles(canvas.width / 2, resultY - 10);
   }
 }
 
 function drawFinalScreen() {
   clearCanvas();
 
-  const bg = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-  bg.addColorStop(0, '#fdf4ff');
-  bg.addColorStop(1, '#f0e6ff');
-  ctx.fillStyle = bg;
+  // Dark background
+  ctx.fillStyle = '#0a0a0f';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Trophy / celebration
-  ctx.font = '64px system-ui, sans-serif';
+  // Subtle stars
+  ctx.save();
+  for (let i = 0; i < 30; i++) {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    const size = Math.random() * 1.2 + 0.3;
+    ctx.fillStyle = `rgba(255,255,255,${Math.random() * 0.2 + 0.1})`;
+    ctx.beginPath();
+    ctx.arc(x, y, size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.restore();
+
+  ctx.font = '500 24px system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.9)';
   ctx.textAlign = 'center';
-  const emoji = score >= 8 ? '\u{1F3C6}' : score >= 5 ? '\u{1F31F}' : '\u{1F4AA}';
-  ctx.fillText(emoji, canvas.width / 2, 90);
+  ctx.fillText('Complete', canvas.width / 2, 90);
 
-  ctx.font = 'bold 32px system-ui, sans-serif';
-  ctx.fillStyle = '#333';
-  ctx.fillText('Game Over!', canvas.width / 2, 140);
-
-  // Score circle
+  // Score display
   const cx = canvas.width / 2;
-  const cy = 230;
-  const r = 60;
+  const cy = 200;
+  const r = 50;
 
   // Background circle
   ctx.beginPath();
   ctx.arc(cx, cy, r, 0, Math.PI * 2);
-  ctx.fillStyle = '#f0f0ff';
-  ctx.fill();
-  ctx.strokeStyle = '#667eea';
-  ctx.lineWidth = 4;
+  ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+  ctx.lineWidth = 2;
   ctx.stroke();
 
   // Score arc
   const pct = score / gameCards.length;
   ctx.beginPath();
   ctx.arc(cx, cy, r, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * pct);
-  const scoreGrad = ctx.createLinearGradient(cx - r, cy, cx + r, cy);
-  scoreGrad.addColorStop(0, '#43e97b');
-  scoreGrad.addColorStop(1, '#38f9d7');
-  ctx.strokeStyle = scoreGrad;
-  ctx.lineWidth = 6;
+  ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+  ctx.lineWidth = 3;
   ctx.stroke();
 
   // Score text
-  ctx.font = 'bold 36px system-ui, sans-serif';
-  ctx.fillStyle = '#333';
+  ctx.font = '500 32px system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.9)';
   ctx.textAlign = 'center';
   ctx.fillText(`${score}`, cx, cy + 8);
-  ctx.font = '16px system-ui, sans-serif';
-  ctx.fillStyle = '#888';
-  ctx.fillText(`out of ${gameCards.length}`, cx, cy + 32);
+  ctx.font = '14px system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.4)';
+  ctx.fillText(`of ${gameCards.length}`, cx, cy + 30);
 
   // Message
   let msg = '';
-  if (pct === 1) msg = 'Perfect score! Amazing!';
-  else if (pct >= 0.8) msg = 'Great job! Almost perfect!';
-  else if (pct >= 0.5) msg = 'Good effort! Keep practicing!';
-  else msg = 'Keep learning, you\'ll get there!';
+  if (pct === 1) msg = 'Perfect';
+  else if (pct >= 0.8) msg = 'Well done';
+  else if (pct >= 0.5) msg = 'Good effort';
+  else msg = 'Keep practicing';
 
-  ctx.font = '20px system-ui, sans-serif';
-  ctx.fillStyle = '#555';
-  ctx.fillText(msg, cx, 340);
+  ctx.font = '16px system-ui, sans-serif';
+  ctx.fillStyle = 'rgba(255,255,255,0.5)';
+  ctx.fillText(msg, cx, 300);
 
   // Review dots
-  const dotStartX = cx - (gameCards.length * 18) / 2;
+  const dotStartX = cx - (gameCards.length * 16) / 2;
   for (let i = 0; i < gameCards.length; i++) {
     ctx.beginPath();
-    ctx.arc(dotStartX + i * 18, 380, 6, 0, Math.PI * 2);
-    ctx.fillStyle = gameCards[i]._correct ? '#22c55e' : '#ef4444';
+    ctx.arc(dotStartX + i * 16, 350, 4, 0, Math.PI * 2);
+    ctx.fillStyle = gameCards[i]._correct ? 'rgba(134,239,172,0.8)' : 'rgba(248,113,113,0.6)';
     ctx.fill();
   }
 
-  // Spawn celebration particles
+  // Spawn subtle celebration particles
   if (particles.length === 0 && score > 0) {
-    spawnParticles(cx - 80, 100);
-    spawnParticles(cx + 80, 100);
-    spawnParticles(cx, 140);
+    spawnParticles(cx, cy - 30);
   }
 }
 

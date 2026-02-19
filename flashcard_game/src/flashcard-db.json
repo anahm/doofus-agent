@@ -2,122 +2,116 @@
   "cards": [
     {
       "id": 1,
-      "input": "images/constellation_orion.svg",
-      "answer": "Orion",
+      "input": "images/andromeda.png",
+      "answer": "Andromeda",
       "type": "image"
     },
     {
       "id": 2,
-      "input": "images/constellation_ursa_major.svg",
-      "answer": "Ursa Major",
+      "input": "images/aquarius.png",
+      "answer": "Aquarius",
       "type": "image"
     },
     {
       "id": 3,
-      "input": "images/constellation_ursa_minor.svg",
-      "answer": "Ursa Minor",
+      "input": "images/aries.png",
+      "answer": "Aries",
       "type": "image"
     },
     {
       "id": 4,
-      "input": "images/constellation_cassiopeia.svg",
-      "answer": "Cassiopeia",
+      "input": "images/cancer.png",
+      "answer": "Cancer",
       "type": "image"
     },
     {
       "id": 5,
-      "input": "images/constellation_leo.svg",
-      "answer": "Leo",
-      "type": "image"
-    },
-    {
-      "id": 6,
-      "input": "images/constellation_scorpius.svg",
-      "answer": "Scorpius",
-      "type": "image"
-    },
-    {
-      "id": 7,
-      "input": "images/constellation_gemini.svg",
-      "answer": "Gemini",
-      "type": "image"
-    },
-    {
-      "id": 8,
-      "input": "images/constellation_taurus.svg",
-      "answer": "Taurus",
-      "type": "image"
-    },
-    {
-      "id": 9,
-      "input": "images/constellation_canis_major.svg",
+      "input": "images/canis_major.png",
       "answer": "Canis Major",
       "type": "image"
     },
     {
-      "id": 10,
-      "input": "images/constellation_cygnus.svg",
+      "id": 6,
+      "input": "images/capricornus.png",
+      "answer": "Capricornus",
+      "type": "image"
+    },
+    {
+      "id": 7,
+      "input": "images/cassiopeia.png",
+      "answer": "Cassiopeia",
+      "type": "image"
+    },
+    {
+      "id": 8,
+      "input": "images/crux.png",
+      "answer": "Crux",
+      "type": "image"
+    },
+    {
+      "id": 9,
+      "input": "images/cygnus.png",
       "answer": "Cygnus",
       "type": "image"
     },
     {
+      "id": 10,
+      "input": "images/gemini.png",
+      "answer": "Gemini",
+      "type": "image"
+    },
+    {
       "id": 11,
-      "input": "images/constellation_aquila.svg",
-      "answer": "Aquila",
+      "input": "images/leo.png",
+      "answer": "Leo",
       "type": "image"
     },
     {
       "id": 12,
-      "input": "images/constellation_lyra.svg",
+      "input": "images/lyra.png",
       "answer": "Lyra",
       "type": "image"
     },
     {
       "id": 13,
-      "input": "images/constellation_sagittarius.svg",
-      "answer": "Sagittarius",
+      "input": "images/pegasus.png",
+      "answer": "Pegasus",
       "type": "image"
     },
     {
       "id": 14,
-      "input": "images/constellation_pisces.svg",
-      "answer": "Pisces",
+      "input": "images/sagittarius.png",
+      "answer": "Sagittarius",
       "type": "image"
     },
     {
       "id": 15,
-      "input": "images/constellation_aries.svg",
-      "answer": "Aries",
+      "input": "images/scorpius.png",
+      "answer": "Scorpius",
       "type": "image"
     },
     {
       "id": 16,
-      "input": "images/constellation_virgo.svg",
-      "answer": "Virgo",
+      "input": "images/taurus.png",
+      "answer": "Taurus",
       "type": "image"
     },
     {
       "id": 17,
-      "input": "images/constellation_libra.svg",
-      "answer": "Libra",
+      "input": "images/ursa_major.png",
+      "answer": "Ursa Major",
       "type": "image"
     },
     {
       "id": 18,
-      "input": "images/constellation_capricornus.svg",
-      "answer": "Capricornus",
+      "input": "images/ursa_minor.png",
+      "answer": "Ursa Minor",
       "type": "image"
     },
     {
       "id": 19,
-      "input": "images/constellation_aquarius.svg",
-      "answer": "Aquarius",
-      "type": "image"
-    },
-    {
-      "id": 20,
-      "input": "images/constellation_crux.svg",
-      "answer": "Crux",
+      "input": "images/virgo.png",
+      "answer": "Virgo",
       "type": "image"
     }
   ]
